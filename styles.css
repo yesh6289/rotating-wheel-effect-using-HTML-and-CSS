@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.wheel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(red 0% 25%,
+            green 25% 50%,
+            blue 50% 75%,
+            yellow 75% 100%);
+}
+
+/* Create the transparent center */
+.wheel::after {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    background: #f0f0f0;
+    /* Match the background color */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Keyframes for forward rotation */
+@keyframes spin-forward {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Keyframes for backward rotation */
+@keyframes spin-backward {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Start spinning forward when hovered */
+.wheel-container:hover .wheel {
+    animation: spin-forward 2s linear infinite;
+}
+
+/* Pause animation when not hovered */
+.wheel-container .wheel {
+    animation: spin-backward 2s linear forwards;
+    animation-play-state: paused;
+}
+
+.wheel-container:hover .wheel {
+    animation-play-state: running;
+}
+
+.wheel-container:not(:hover) .wheel {
+    animation-play-state: running;
+}
