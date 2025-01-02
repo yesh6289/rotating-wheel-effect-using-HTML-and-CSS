@@ -1,4 +1,4 @@
-#Rotating Wheel Effect Using HTML and CSS
+Rotating Wheel Effect Using HTML and CSS
 
 Overview
 This project demonstrates a visually engaging rotating wheel effect using HTML and CSS. The wheel is divided into four equal segments colored red, green, blue, and yellow, which rotate forward when hovered over and then rotate backward when the mouse leaves. The design features a transparent center to enhance the visual appeal.
@@ -12,15 +12,15 @@ Technologies Used
 HTML: Structure of the webpage.
 CSS: Styles and animations for the rotating wheel.
 Installation
-Clone the Repository:
 
+Clone the Repository:
 bash
-Copy code
 git clone https://github.com/yesh6289/rotating-wheel-effect-using-HTML-and-CSS
 cd rotating-wheel-effect-using-HTML-and-CSS
+
 Open the HTML File: Open index.html in your preferred web browser to view the rotating wheel effect.
 
-Code Explanation
+Code Explanation: 
 HTML Structure
 The HTML consists of a main container (wheel-container) that holds the rotating wheel (wheel). Inside the wheel, there are four segments that are visually represented using a conic gradient.
 
